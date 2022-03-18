@@ -27,7 +27,7 @@ py2 = 250
 
 #ball
 b_size = 15
-bmovement = 5
+bmovement = 1
 bx = width/2
 by = height/2
 mxball = 20
@@ -86,9 +86,9 @@ def control_ball():
         if by < py + board_size + b_size and by > py - b_size:
             ball_sound()
             mxball *= -1
-            myball += bmovement
-            if by > py + board_size/5 and by < py + board_size - board_size/5:
-                myball -= bmovement*2
+            myball -= bmovement
+            if by > py + board_size/2 and by < py + board_size + b_size:
+                myball += bmovement*2
         else:
             bx = width/2
             by = height/2
@@ -98,9 +98,9 @@ def control_ball():
         if by < py2 + board_size + b_size and by > py2 - b_size:
             ball_sound()
             mxball *= -1
-            myball += bmovement
-            if by > py2 + board_size/5 and by < py2 + board_size - board_size/5:
-                myball -= bmovement*2
+            myball -= bmovement
+            if by > py + board_size/2 and by < py + board_size + b_size:
+                myball += bmovement*2
         else:
             bx = width/2
             by = height/2
